@@ -3,7 +3,7 @@ import { useRouteError } from 'react-router-dom';
 
 export const ErrorPage = () => {
   const error = useRouteError();
-  console.error(error);
+
   return (
     <Box sx={{ color: 'background.paper', p: 2 }} component="footer">
       <Typography variant="h6" align="center" gutterBottom>
