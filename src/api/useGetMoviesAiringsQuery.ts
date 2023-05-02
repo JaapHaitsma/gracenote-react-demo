@@ -74,7 +74,7 @@ type Rating = {
   subRating?: string;
 };
 
-export interface MovieAirings {
+export type MovieAirings = {
   channels: string[];
   duration: number;
   endTime: string;
@@ -83,14 +83,14 @@ export interface MovieAirings {
   startTime: string;
   station: Station;
   stationId: string;
-}
+};
 
 type GetMoviesAiringsResponseType = MovieAirings[];
 
-interface MoviesAiringsParams {
+type MoviesAiringsParams = {
   lineupId: string;
   startDateTime: string;
-}
+};
 
 const getMoviesAirings = (
   params: MoviesAiringsParams,

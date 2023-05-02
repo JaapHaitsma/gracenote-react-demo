@@ -13,7 +13,7 @@ export type MovieShowTime = {
   ticketURI: string;
 };
 
-export interface MovieShowings {
+export type MovieShowings = {
   tmsId: string;
   title: string;
   shortDescription: string;
@@ -27,7 +27,7 @@ export interface MovieShowings {
     primary: boolean;
   };
   showtimes: MovieShowTime[];
-}
+};
 
 type GetMoviesShowingsQueryResponseType = MovieShowings[];
 
