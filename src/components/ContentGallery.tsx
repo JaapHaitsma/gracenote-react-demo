@@ -1,4 +1,3 @@
-import { FC } from 'react';
 import { Container, Grid } from '@mui/material';
 
 import ContentCard from './ContentCard';
@@ -20,7 +19,7 @@ interface Props {
   contentItems: ContentItem[];
 }
 
-export const ContentGallery: FC<Props> = ({ contentItems }) => {
+export const ContentGallery = ({ contentItems }: Props) => {
   return (
     <Container sx={{ py: 8 }} maxWidth={false}>
       <Grid container spacing={4}>

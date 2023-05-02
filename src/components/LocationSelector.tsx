@@ -1,7 +1,6 @@
 import { FormControlLabel, Radio } from '@mui/material';
 import { Box } from './Box';
 import { Label } from './Label';
-import { FC } from 'react';
 
 export const Locations = {
   // East Meadow,
@@ -52,10 +51,10 @@ type Props = {
   setSelectedZipCode: (zipCode: number) => void;
 };
 
-export const LocationSelector: FC<Props> = ({
+export const LocationSelector = ({
   selectedZipCode,
   setSelectedZipCode,
-}) => {
+}: Props) => {
   return (
     <Box flexDirection={'row'}>
       <Label variant="h4" sx={{ mr: '1.5rem' }}>

@@ -1,6 +1,6 @@
 import { DateSelector } from './DateSelector';
 import { LocationSelector } from './LocationSelector';
-import { Dispatch, FC, SetStateAction } from 'react';
+import { Dispatch, SetStateAction } from 'react';
 import { Box } from './Box';
 import { Dayjs } from 'dayjs';
 import { styled } from '@mui/material';
@@ -25,12 +25,12 @@ export type ParamSelectorPropsType = {
   setZipCode: Dispatch<SetStateAction<number>>;
 };
 
-export const ParamSelector: FC<ParamSelectorPropsType> = ({
+export const ParamSelector = ({
   selectedDate,
   setSelectedDate,
   zipCode,
   setZipCode,
-}) => {
+}: ParamSelectorPropsType) => {
   return (
     <Container>
       <DateSelector

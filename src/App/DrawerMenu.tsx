@@ -7,7 +7,7 @@ import {
   styled,
   Link as MuiLink,
 } from '@mui/material';
-import { FC, KeyboardEvent, MouseEvent } from 'react';
+import { KeyboardEvent, MouseEvent } from 'react';
 import { verticalGradient } from './gradients';
 import { Link, useLocation } from 'react-router-dom';
 import { drawerRoutesConfig } from './router';
@@ -36,7 +36,7 @@ type Props = {
   toggleDrawer: ToggleDrawer;
 };
 
-export const DrawerMenu: FC<Props> = ({ toggleDrawer }) => {
+export const DrawerMenu = ({ toggleDrawer }: Props) => {
   const closeDrawer = toggleDrawer(false);
   const closeDrawerDelayed = (e: KeyboardEvent | MouseEvent) => {
     setTimeout(closeDrawer, 250, e);
