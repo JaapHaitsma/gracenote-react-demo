@@ -23,8 +23,8 @@ export const ContentGallery = ({ contentItems }: Props) => {
   return (
     <Container sx={{ py: 8 }} maxWidth={false}>
       <Grid container spacing={4}>
-        {contentItems?.map((item: ContentItem) => (
-          <Grid item key={item.tmsId} xs={12} sm={6} md={3} lg={3} xl={2}>
+        {contentItems?.map((item: ContentItem, index: number) => (
+          <Grid item key={index} xs={12} sm={6} md={3} lg={3} xl={2}>
             <ContentCard contentItem={item} />
           </Grid>
         ))}
