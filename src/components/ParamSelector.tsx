@@ -18,14 +18,14 @@ const Container = styled(Box)(({ theme }) => {
   };
 });
 
-type Props = {
+export type ParamSelectorPropsType = {
   selectedDate: Dayjs | null;
   setSelectedDate: Dispatch<SetStateAction<Dayjs | null>>;
   zipCode: number;
   setZipCode: Dispatch<SetStateAction<number>>;
 };
 
-export const ParamSelector: FC<Props> = ({
+export const ParamSelector: FC<ParamSelectorPropsType> = ({
   selectedDate,
   setSelectedDate,
   zipCode,
