@@ -17,20 +17,16 @@ export type Lineup = {
   type: string;
 };
 
-export type GetLineupsQueryResponseType = Lineup[];
-
 type LineupsParams = {
   startDateTime: string;
   postalCode: string;
   country: string;
 };
 
-const getLineups = (
-  params: LineupsParams,
-): UseQueryOptions<GetLineupsQueryResponseType> => ({
+const getLineups = (params: LineupsParams): UseQueryOptions<Lineup[]> => ({
   queryKey: ['lineups', params],
   queryFn: async ({ signal }) => {
-    const { data } = await request<GetLineupsQueryResponseType>({
+    const { data } = await request<Lineup[]>({
       url: 'lineups',
       params,
       signal,

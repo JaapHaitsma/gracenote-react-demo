@@ -29,8 +29,6 @@ export type MovieShowings = {
   showtimes: MovieShowTime[];
 };
 
-type GetMoviesShowingsQueryResponseType = MovieShowings[];
-
 export type MoviesShowingsParams = {
   startDate: string;
   zip: number;
@@ -38,10 +36,10 @@ export type MoviesShowingsParams = {
 
 const getMoviesShowings = (
   params: MoviesShowingsParams,
-): UseQueryOptions<GetMoviesShowingsQueryResponseType> => ({
+): UseQueryOptions<MovieShowings[]> => ({
   queryKey: ['movies/showings', params],
   queryFn: async ({ signal }) => {
-    const { data } = await request<GetMoviesShowingsQueryResponseType>({
+    const { data } = await request<MovieShowings[]>({
       url: 'movies/showings',
       params,
       signal,

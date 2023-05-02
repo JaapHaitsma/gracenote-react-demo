@@ -85,8 +85,6 @@ export type MovieAirings = {
   stationId: string;
 };
 
-type GetMoviesAiringsResponseType = MovieAirings[];
-
 type MoviesAiringsParams = {
   lineupId: string;
   startDateTime: string;
@@ -94,10 +92,10 @@ type MoviesAiringsParams = {
 
 const getMoviesAirings = (
   params: MoviesAiringsParams,
-): UseQueryOptions<GetMoviesAiringsResponseType> => ({
+): UseQueryOptions<MovieAirings[]> => ({
   queryKey: ['movies/airings', params],
   queryFn: async ({ signal }) => {
-    const { data } = await request<GetMoviesAiringsResponseType>({
+    const { data } = await request<MovieAirings[]>({
       url: 'movies/airings',
       params,
       signal,
